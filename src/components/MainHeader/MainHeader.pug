@@ -4,7 +4,7 @@ include ../../../node_modules/bempug/index
 +b('main-header', {t: 'header'})
   +e('wrapper', {})
     +e('button', {m: 'back'})(
-      v-if="$route.path.length > 1"
+      v-if="$route.path.includes('edit') || $route.path.includes('create')"
       @click="backButtonClicked"
     )
       +e('icon', {t: 'svg'})

@@ -23,7 +23,7 @@ export default {
     },
     todoItemEditClicked() {
       this.$store.dispatch('todos/setTodoForEdit', this.todo.id);
-      this.$router.push('/edit');
+      this.$router.push('/workzone/todo/edit');
     }
   }
 }

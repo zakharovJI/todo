@@ -8,15 +8,15 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: "/",
+    path: "/workzone/todo/",
     component: MainPage
   },
   {
-    path: "/create",
+    path: "/workzone/todo/create",
     component: CreatePage
   },
   {
-    path: "/edit",
+    path: "/workzone/todo/edit",
     component: EditPage
   }
 ]

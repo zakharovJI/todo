@@ -34,8 +34,8 @@ export default {
         this.$store.commit('todos/removeTodoFromList');
         this.$store.dispatch('clearCurrentHelperInfo');
 
-        if (this.$route.path.length > 1) {
-          this.$router.push('/');
+        if (this.$route.path.includes('edit') || this.$route.path.includes('create')) {
+          this.$router.push('/workzone/todo/');
         }
       } else if (action === 'noSave') {
         this.$store.commit('todos/clearTodoListForCreating');
