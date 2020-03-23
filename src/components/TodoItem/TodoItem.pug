@@ -1,0 +1,22 @@
+include ../../../node_modules/bempug/index
+- BEMPUG.modifier = '_';
+
++b('todo-item')
+  brand-input(
+    placeholder="Введите задачу"
+    ref="todoInput"
+    @input="onInput"
+    :value="todoForInput"
+  )
+  +e('button-wrapper', {})
+    brand-button(
+      label="Удалить"
+      :themeRed="true"
+      @click="deleteButtonClicked"
+    )
+    brand-button(
+      label="Готово"
+      :themeGreen="editState"
+      @click="doneButtonClicked"
+      v-if="editState"
+    )

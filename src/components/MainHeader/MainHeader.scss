@@ -1,0 +1,42 @@
+.main-header {
+  $self: &;
+
+  height: 50px;
+  background-color: $primary-blue;
+  width: 100%;
+
+  &__wrapper {
+    @include container();
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__button {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 10px;
+    user-select: none;
+    color: white;
+
+    &:hover {
+      background-color: rgba(0,0,0,.1);
+    }
+
+    &:active, &:focus {
+      background-color: rgba(0,0,0,.15);
+    }
+
+    & #{$self}__icon {
+      width: 50px;
+      height: 30px;
+    }
+
+    &_create {
+      margin-left: auto;
+      @include fntMuseo500(18px)
+    }
+  }
+}

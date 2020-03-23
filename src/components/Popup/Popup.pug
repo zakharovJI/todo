@@ -1,0 +1,16 @@
+include ../../../node_modules/bempug/index
+- BEMPUG.modifier = '_';
+
++b('popup')(v-show="popupShowState")
+  +e('wrapper', {})
+    +e('title', {}) {{title}}
+    +e('controls', {})
+      brand-button(
+        label="Отменить"
+        @click="cancelAction"
+        :themeLight="true"
+      )
+      brand-button(
+        label="Подтвердить"
+        @click="confirmAction"
+      )

@@ -1,0 +1,40 @@
+include ../../../node_modules/bempug/index
+- BEMPUG.modifier = '_';
+
++b('edit-page')
+  +e('todos', {})
+    +e('title-wrapper', {})
+      brand-input(
+        placeholder="Введите заголовок"
+        ref="todoTitleInput"
+        @input="titleInput"
+        :value="todo.title || ''"
+      )
+    +e('todo-list')(
+      ref="inputList"
+    )
+      todo-item(
+        v-for="(todoItem, index) in notDoneTodoList"
+        :key="todoItem.id"
+        :id="todoItem.id"
+        state="edit"
+        :parentId="todo.id"
+        :todoForInput="todoItem.title"
+      )
+    +e('button-wrapper', {})
+      brand-button(
+        label="Добавть задачу"
+        @click="addTodoButtonClicked"
+      )
+      brand-button(
+        label="Удалить заметку"
+        @click="deleteTodoButton"
+        :themeRed="true"
+      )
+  +e('todos', {m: 'done'})
+    +e('title', {}) Выполненные задачи
+    +e('list', {})
+      +e('list-item', {})(
+        v-for="(item, index) in doneTodoList"
+        :key="'doneTodo'+index"
+      ) {{item.title}}

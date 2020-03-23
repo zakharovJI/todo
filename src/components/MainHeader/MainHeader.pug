@@ -1,0 +1,13 @@
+include ../../../node_modules/bempug/index
+- BEMPUG.modifier = '_';
+
++b('main-header', {t: 'header'})
+  +e('wrapper', {})
+    +e('button', {m: 'back'})(
+      v-if="$route.path.length > 1"
+      @click="backButtonClicked"
+    )
+      +e('icon', {t: 'svg'})
+        use(xlink:href="#back")
+    +e('button', {m: 'create'})(@click="actionButtonClicked")
+      +e('text', {}) {{buttonText}}

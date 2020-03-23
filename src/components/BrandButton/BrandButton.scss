@@ -1,0 +1,54 @@
+.brand-button {
+  $self: &;
+  
+  background-color: $primary-blue;
+  color: white;
+  cursor: pointer;
+  transition: background-color .1s linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  border: none;
+
+  &:active {
+    background-color: darken($primary-blue, 5%);
+  }
+
+  &:focus {
+    outline: none;
+  }
+  
+  #{$self}__content {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 16px;
+  }
+
+  &_theme-light {
+    color: $primary-font-color;
+    background-color: $dark-white;
+    
+    &:active {
+      background-color: darken($dark-white, 2%);
+    }
+  }
+
+  &_theme-red {
+    color: white;
+    background-color: $red;
+
+    &:active {
+      background-color: darken($red, 2%);
+    }
+  }
+
+  &_theme-green {
+    color: white;
+    background-color: $green;
+
+    &:active {
+      background-color: darken($green, 2%);
+    }
+  }
+}

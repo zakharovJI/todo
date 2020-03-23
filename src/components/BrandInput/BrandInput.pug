@@ -1,0 +1,15 @@
+include ../../../node_modules/bempug/index
+- BEMPUG.modifier = '_';
+
++b('brand-input')
+	+e('control', {t: 'label'})
+		+e('field', {t: 'input'})(
+			v-model="selfValue"
+			@focus="onFocus"
+			@blur="onBlur"
+			@input="onInput"
+			@click="onClick"
+			autocomplete="off"
+			ref="inputField"
+			:placeholder="placeholder"
+		)

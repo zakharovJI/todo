@@ -1,0 +1,11 @@
+.app {
+
+  width: 100vw;
+  min-height: 100vh;
+  @include fntMuseo300(12px);
+
+  &__content {
+    @include container();
+    padding: 30px 0;
+  }
+}

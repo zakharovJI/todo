@@ -1,0 +1,10 @@
+include ../../../node_modules/bempug/index
+- BEMPUG.modifier = '_';
+
++b('brand-button', {t: 'button'})(
+	@click="onClick"
+	:type="selfType"
+	:class="{'brand-button_theme-light' : themeLight," +
+	" 'brand-button_theme-red' : themeRed, " +
+	" 'brand-button_theme-green' : themeGreen}")
+	+e('content', {})() {{label}}

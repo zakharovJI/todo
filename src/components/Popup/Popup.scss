@@ -1,0 +1,39 @@
+.popup {
+
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.2);
+  z-index: 100;
+  top: 0;
+  left: 0;
+
+  &__wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    min-height: 200px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    padding: 30px;
+
+    @include fntMuseo700(26px)
+  }
+
+  &__controls {
+    margin-top: auto;
+    height: 50px;
+    width: 100%;
+    display: flex;
+
+    .brand-button {
+      width: 50%;
+    }
+  }
+}

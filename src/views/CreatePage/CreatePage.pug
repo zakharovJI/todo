@@ -1,0 +1,24 @@
+include ../../../node_modules/bempug/index
+- BEMPUG.modifier = '_';
+
++b('create-page')
+  +e('title-wrapper', {})
+    brand-input(
+      placeholder="Введите заголовок"
+      ref="todoTitleInput"
+      @input="titleInput"
+    )
+  +e('todo-list')(
+      ref="inputList"
+    )
+    todo-item(
+      v-for="(todo, index) in todoItemList"
+      :key="todo.id"
+      :id="todo.id"
+      state="create"
+    )
+  +e('button-wrapper', {})
+    brand-button(
+      label="Добавть задачу"
+      @click="addTodoButtonClicked"
+  )

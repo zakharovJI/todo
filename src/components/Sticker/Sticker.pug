@@ -1,0 +1,19 @@
+include ../../../node_modules/bempug/index
+- BEMPUG.modifier = '_';
+
++b('sticker')(@click="todoItemEditClicked")
+  +e('wrapper', {})
+    +e('title-wrapper', {})
+      +e('title', {}) {{todo.title}}
+      +e('remove', {t: 'svg'})(@click.stop="todoItemRemoveClicked")
+        use(xlink:href="#close")
+    +e('content', {})
+      +e('todo-item', {})(
+        v-for="(todoItem, index) in sortedTodoList"
+        v-if="index < 3"
+        :key="todoItem.title + index"
+        :class="{'sticker__todo-item_done' : todoItem.done}"
+      ) {{todoItem.title}}
+    +e('shadow-wrapper', {})
+      +e('', {})
+      +e('', {})
