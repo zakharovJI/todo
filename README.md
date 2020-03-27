@@ -2,7 +2,7 @@
 
 ## Site host
 ```
-https://makson-dev.ru/workzone/understand/
+https://makson-dev.ru/workzone/todo/
 ```
 ## Project setup
 ```
