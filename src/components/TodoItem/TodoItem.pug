@@ -3,20 +3,21 @@ include ../../../node_modules/bempug/index
 
 +b('todo-item')
   brand-input(
+    v-model="selfTodoForInput"
     placeholder="Введите задачу"
     ref="todoInput"
     @input="onInput"
-    :value="todoForInput"
   )
   +e('button-wrapper', {})
     brand-button(
-      label="Удалить"
       :themeRed="true"
+      label="Удалить"
       @click="deleteButtonClicked"
     )
     brand-button(
-      label="Готово"
-      :themeGreen="editState"
-      @click="doneButtonClicked"
       v-if="editState"
+      :themeGreen="editState"
+      :disable="!selfTodoForInput"
+      @click="doneButtonClicked"
+      label="Готово"
     )

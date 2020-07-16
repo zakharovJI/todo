@@ -51,4 +51,10 @@
       background-color: darken($green, 2%);
     }
   }
+
+  &_disable {
+    cursor: default;
+    background-color: $gray;
+    pointer-events: none;
+  }
 }

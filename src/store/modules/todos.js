@@ -1,14 +1,12 @@
 const state = {
-  todoList: window.localStorage.getItem('todoList') !== null ?
-    JSON.parse(window.localStorage.getItem('todoList')) : {list: []},
+  todoList: JSON.parse(window.localStorage.getItem('todoList') || {}),
   todoListIdCount: window.localStorage.getItem('todoListIdCount')/1 || 0,
   todoIdForAction: null,
   todoListForCreating: {
     title: null,
+    group: null,
     id: window.localStorage.getItem('todoListIdCount')/1 || 0,
-    list: [
-
-    ]
+    list: []
   },
   todoForEdit: null
 };

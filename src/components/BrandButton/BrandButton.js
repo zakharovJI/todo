@@ -1,14 +1,28 @@
 export default {
   name: 'BranButton',
   props: {
-    label: {},
+    label: {
+      type: String,
+      required: true
+    },
     themeLight: {
+      type: Boolean,
+      required: false,
       default: false
     },
     themeRed: {
+      type: Boolean,
+      required: false,
       default: false
     },
     themeGreen: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    disable: {
+      type: Boolean,
+      required: false,
       default: false
     }
   },

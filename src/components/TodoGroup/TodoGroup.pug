@@ -1,0 +1,11 @@
+include ../../../node_modules/bempug/index
+- BEMPUG.modifier = '_';
+
++b('todo-group')&attributes(attributes)
+    +e('title', {}) {{ title }}
+    +e('sticker-wrapper', {})
+        sticker(
+            v-for="todo in todoList"
+            :key="todo.id"
+            :todo="todo"
+        )

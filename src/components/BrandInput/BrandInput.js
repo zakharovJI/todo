@@ -25,14 +25,13 @@ export default {
     },
     onBlur(e) {
       this.stateFocused = false;
-
     },
     onClick(e) {
       this.$emit('click', e);
     },
     onInput(e) {
       this.stateFilled = !!this.selfValue;
-      this.$emit('input', e);
+      this.$emit('input', this.selfValue);
     },
   }
 }

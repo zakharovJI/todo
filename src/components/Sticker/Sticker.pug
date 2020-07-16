@@ -1,7 +1,10 @@
 include ../../../node_modules/bempug/index
 - BEMPUG.modifier = '_';
 
-+b('sticker')(@click="todoItemEditClicked")
++b('sticker')(
+  @click="todoItemEditClicked"
+  draggable="true"
+)
   +e('wrapper', {})
     +e('title-wrapper', {})
       +e('title', {}) {{todo.title}}

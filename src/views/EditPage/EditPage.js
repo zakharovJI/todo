@@ -35,6 +35,8 @@ export default {
     }
   },
   mounted() {
+    this.isMounted = true;
+
     this.todo.list.forEach(item => {
       // Копируем все поля тудушки в новый массив
       this.$store.commit('todos/addToTodoListForCreating', {id: item.id, title: item.title, done: item.done});
@@ -46,8 +48,6 @@ export default {
       this.count++;
     });
 
-    this.isMounted = true;
-
     // Копируем название тудушки
     this.titleInput()
 
@@ -55,8 +55,10 @@ export default {
   methods: {
     addTodoButtonClicked() {
       // Добавляем новое поля туду
-      this.$store.commit('todos/addToTodoListForCreating', {id: this.count});
-      this.count++;
+      if (this.$refs.todoItem?.slice(-1)[0]?.selfTodoForInput) {
+        this.$store.commit('todos/addToTodoListForCreating', {id: this.count});
+        this.count++;
+      }
     },
     titleInput() {
       this.$store.commit('todos/setTitleForCreating', this.$refs.todoTitleInput.selfValue)

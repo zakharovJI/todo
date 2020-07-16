@@ -19,6 +19,7 @@ export default {
   },
   data() {
     return {
+      selfTodoForInput: this.todoForInput,
       text: this.state === 'edit' ? 'Готово' : 'Удалить',
       createState: this.state !== 'edit',
       editState: this.state === 'edit',
@@ -32,7 +33,9 @@ export default {
       this.$store.commit('todos/removeFromTodoListForCreating', this.id);
     },
     doneButtonClicked() {
-      this.$store.commit('todos/checkTodoAsDoneInCreatingList', this.id);
+      if (!this.disable) {
+        this.$store.commit('todos/checkTodoAsDoneInCreatingList', this.id);
+      }
     },
     onInput() {
       // Записываем в стор значение этого пункта туду

@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-      count : 0
+      count : 1
     }
   },
   computed: {
@@ -24,8 +24,10 @@ export default {
   },
   methods: {
     addTodoButtonClicked() {
-      this.$store.commit('todos/addToTodoListForCreating', {id: this.count});
-      this.count++;
+      if (!this.$refs.todoItem || [this.$refs.todoItem]?.flat()?.slice(-1)[0].selfTodoForInput) {
+        this.$store.commit('todos/addToTodoListForCreating', {id: this.count});
+        this.count++;
+      }
     },
     titleInput() {
       this.$store.commit('todos/setTitleForCreating', this.$refs.todoTitleInput.selfValue)

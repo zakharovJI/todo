@@ -1,0 +1,16 @@
+.todo-group {
+  $self: &;
+
+  width: 100%;
+
+  &__title {
+    font-size: 18px;
+    line-height: 1.43;
+  }
+
+  &__sticker-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+}
